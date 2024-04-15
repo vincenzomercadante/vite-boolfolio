@@ -1,4 +1,6 @@
 <script>
+import { RouterLink } from "vue-router";
+
 export default {
   props: {
     title: String,
@@ -11,6 +13,7 @@ export default {
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">{{ title }}</a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -25,10 +28,12 @@ export default {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <RouterLink to="/" class="nav-link active">Home</RouterLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Projects</a>
+              <RouterLink to="/projects" class="nav-link active"
+                >Projects</RouterLink
+              >
             </li>
           </ul>
         </div>

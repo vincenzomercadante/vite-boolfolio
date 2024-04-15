@@ -1,8 +1,9 @@
 <script>
 import axios from "axios";
 
-import ProjectCard from "./ProjectCard.vue";
+import ProjectCard from "../components/ProjectCard.vue";
 import { store } from "../store";
+import { RouterLink } from "vue-router";
 
 export default {
   data() {
@@ -34,7 +35,9 @@ export default {
   <h1 class="my-4">Project List</h1>
   <div class="row">
     <div v-for="project in store.projects" class="col-4">
-      <ProjectCard :project="project" />
+      <RouterLink :to="'/projects/' + project.id" class="text-decoration-none">
+        <ProjectCard :project="project" />
+      </RouterLink>
     </div>
   </div>
 </template>
