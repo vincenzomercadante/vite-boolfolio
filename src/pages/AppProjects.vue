@@ -2,7 +2,7 @@
 import axios from "axios";
 
 import ProjectCard from "../components/ProjectCard.vue";
-import { store } from "../store";
+import { apiUri, store } from "../store";
 import { RouterLink } from "vue-router";
 
 export default {
@@ -18,7 +18,7 @@ export default {
   },
 
   methods: {
-    fetchList(apiUrl = "http://127.0.0.1:8000/api/projects") {
+    fetchList(apiUrl = apiUri + "projects") {
       axios.get(apiUrl).then((res) => {
         store.projects = res.data.data;
       });
